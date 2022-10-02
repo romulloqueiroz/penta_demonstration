@@ -1,16 +1,18 @@
 import { colors, ColorType } from './colors';
-import { ViewType } from './types';
+import { ViewType, GradientType } from './types';
 import { spacing, SpacingType } from './spacing';
 import { shadow, ShadowType } from './shadow';
 import { fontType, FontTypeType } from './fonts';
 import { icon, IconType } from './icons';
+import { gradient, GradientTypeType } from './gradients';
 
 export {
 	colors,
   spacing,
   shadow,
   fontType,
-  icon
+  icon,
+  gradient
 };
 
 export type {
@@ -19,5 +21,7 @@ export type {
   SpacingType,
   ShadowType,
   FontTypeType,
-  IconType
+  IconType,
+  GradientType,
+  GradientTypeType
 };

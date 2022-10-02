@@ -3,6 +3,8 @@ import { ColorType } from './colors';
 import { ShadowType } from './shadow';
 import { SpacingType } from './spacing';
 
+export type GradientType = 'black' | 'black2' | 'primary' | 'secondary' | 'tertiary' | 'green';
+
 export interface ViewType {
 	children: React.ReactNode;
 	

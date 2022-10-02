@@ -3,22 +3,13 @@ export type ShadowType = 0 | 1 | 2;
 export const shadow = {
 	0: null,
 	1: {
-		shadowColor: '#000000',
+		shadowColor: '#1A1C1F',
 		shadowOffset: {
 			width: 0,
-			height: 0
+			height: 18,
 		},
-		shadowOpacity: 0.12,
+		shadowOpacity: 0.7,
 		shadowRadius: 12,
 		elevation: 1
-	},
-	2: {
-		shadowColor: '#000000',
-		shadowOffset: {
-			width: 0,
-			height: 0
-		},
-		shadowOpacity: 0.12,
-		shadowRadius: 2
 	}
 };

@@ -1,4 +1,5 @@
 import { GradientType } from "./Gradient.types";
+import { gradient } from '@styles';
 
 export const chooseType = (type: GradientType) => {
   switch (type) {
@@ -8,8 +9,8 @@ export const chooseType = (type: GradientType) => {
         sy: 1,
         ex: 0.5,
         ey: 0.2,
-        color1: '#23262B',
-        color2: '#373B45'
+        color1: gradient.black[0],
+        color2: gradient.black[1]
       };
     case 'black2':
       return {
@@ -17,8 +18,8 @@ export const chooseType = (type: GradientType) => {
         sy: 1,
         ex: -0.5,
         ey: -0.5,
-        color1: '#23262B',
-        color2: '#373B45'
+        color1: gradient.black[0],
+        color2: gradient.black[1]
       };
     case 'primary':
       return {
@@ -26,8 +27,8 @@ export const chooseType = (type: GradientType) => {
         sy: 1,
         ex: 0.66,
         ey: 1,
-        color1: '#D943F8',
-        color2: '#884EF7'
+        color1: gradient.primary[0],
+        color2: gradient.primary[1]
       };
     case 'secondary':
       return {
@@ -35,8 +36,8 @@ export const chooseType = (type: GradientType) => {
         sy: 0,
         ex: 0.5,
         ey: 1,
-        color1: '#4355F8',
-        color2: '#54CEF5'
+        color1: gradient.secondary[0],
+        color2: gradient.secondary[1]
       };
     case 'green':
       return {
@@ -44,8 +45,8 @@ export const chooseType = (type: GradientType) => {
         sy: 0,
         ex: 0.5,
         ey: 1,
-        color1: '#67F843',
-        color2: '#54F5F5'
+        color1: gradient.green[0],
+        color2: gradient.green[1]
       };
     default:
       return {

@@ -5,6 +5,7 @@ import Button from './Button/Button';
 import Icon from './Icon/Icon';
 import BottomNavigator from './BottomNavigator/BottomNavigator';
 import Gradient from './Gradient/Gradient';
+import Earphone from './Earphone/Earphone';
 
 export {
   View,
@@ -13,5 +14,6 @@ export {
   Button,
   Icon,
   BottomNavigator,
-  Gradient
+  Gradient,
+  Earphone
 };
