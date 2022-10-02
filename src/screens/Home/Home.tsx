@@ -1,7 +1,27 @@
 import { BasicLayout } from '@layouts';
-import { View, Text, Button, Touchable, BottomNavigator } from '@components';
+import { View, Text, Button, Touchable, BottomNavigator, Gradient } from '@components';
 import { Indicator } from './Indicator/Indicator';
 import { Progress } from './Progress/Progress';
+
+const Card = () => (
+  <Touchable 
+    onPress={() => null}  
+    w={184} 
+    h={168}
+    mb='s' 
+    br='s' 
+    style={{ overflow: 'hidden' }}
+  >
+    <Gradient 
+      row
+      main='center'
+      cross='center'
+      type='black2'
+    >
+      <Text>A</Text>
+    </Gradient>
+  </Touchable>
+)
 
 const Home = () => (
   <>
@@ -12,7 +32,7 @@ const Home = () => (
       </View>
 
       <View cross='center'>
-        <View w={184} h={168} bgc='background1' mb='s' />
+        <Card />
         <View row w='100%' ph='xxs' main='space-between' mb='m'>
           <View h={70} w={70} bgc='background1' />
           <View h={70} w={70} bgc='background1' />

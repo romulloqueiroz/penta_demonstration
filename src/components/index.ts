@@ -4,6 +4,7 @@ import Touchable from './Touchable/Touchable';
 import Button from './Button/Button';
 import Icon from './Icon/Icon';
 import BottomNavigator from './BottomNavigator/BottomNavigator';
+import Gradient from './Gradient/Gradient';
 
 export {
   View,
@@ -11,5 +12,6 @@ export {
   Touchable,
   Button,
   Icon,
-  BottomNavigator
+  BottomNavigator,
+  Gradient
 };

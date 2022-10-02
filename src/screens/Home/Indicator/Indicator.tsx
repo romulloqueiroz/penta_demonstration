@@ -1,4 +1,6 @@
-import { View, Text } from '@components';
+import { View } from '@components';
+import { Symbol1, Symbol2, Symbol3 } from '@images';
+import { Item } from './Item/Item';
 
 export const Indicator = () => (
   <View
@@ -10,17 +12,8 @@ export const Indicator = () => (
     main='space-around'
     cross='center'
   >
-    <View row>
-      <View />
-      <Text weight='700'>12</Text>
-    </View>
-    <View row>
-      <View />
-      <Text weight='700'>12</Text>
-    </View>
-    <View row>
-      <View />
-      <Text weight='700'>12</Text>
-    </View>
+    <Item image={Symbol1} />
+    <Item image={Symbol2} />
+    <Item image={Symbol3} />
   </View>
 );

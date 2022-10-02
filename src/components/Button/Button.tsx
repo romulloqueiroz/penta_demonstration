@@ -3,6 +3,7 @@ import { Keyboard } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import Text from '@src/components/Text/Text';
 import Touchable from '@src/components/Touchable/Touchable';
+import Gradient from '@src/components/Gradient/Gradient';
 import { ButtonProps } from './Button.types';
 
 const Button: React.FC<ButtonProps> = ({
@@ -26,29 +27,13 @@ const Button: React.FC<ButtonProps> = ({
 			row
       br='xxxs'
       style={{ overflow: 'hidden' }}
+			w='100%'
 		>
-      <LinearGradient
-        start={{ x: 0, y: 1 }}
-        end={{ x: 0.66, y: 1 }}
-        colors={[
-          '#D943F8',
-          '#884EF7'
-        ]}
-        style={{
-          height: '100%',
-          width: '100%',
-          flexDirection: 'row',
-          justifyContent: 'center',
-          alignItems: 'center'
-        }}
-      >
-				<Text
-					weight="700"
-					color='text1'
-				>
+      <Gradient row main='center' cross='center' type='primary'>
+				<Text weight="700" color='text1'>
 					{title}
 				</Text>
-			</LinearGradient>
+			</Gradient>
 		</Touchable>
 	);
 };

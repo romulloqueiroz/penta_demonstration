@@ -1,7 +1,7 @@
 import React from 'react';
 import { TouchableOpacity } from 'react-native';
 import { ViewType } from '@styles';
-import View from '../View/View';
+import View from '@src/components/View/View';
 
 interface TouchableProps extends ViewType {
 	opacity: number;
