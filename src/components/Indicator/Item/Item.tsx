@@ -1,5 +1,7 @@
 import { Image, ImageSourcePropType } from 'react-native';
-import { View, Text } from '@components';
+import Text from '@src/components/Text/Text';
+import View from '@src/components/View/View';
+
 
 export const Item: React.FC<{ image: ImageSourcePropType; }> = ({ image }) => (
   <View row cross='center'>

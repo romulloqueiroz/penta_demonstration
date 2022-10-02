@@ -5,6 +5,16 @@ import { shadow, ShadowType } from './shadow';
 import { fontType, FontTypeType } from './fonts';
 import { icon, IconType } from './icons';
 import { gradient, GradientTypeType } from './gradients';
+import {
+	screenHeight,
+	screenWidth,
+	deviceHeight,
+	deviceWidth,
+	statusBarHeight,
+	navigationBarHeight,
+	os,
+	statusBar
+} from './dimensions';
 
 export {
 	colors,
@@ -12,7 +22,15 @@ export {
   shadow,
   fontType,
   icon,
-  gradient
+  gradient,
+  screenHeight,
+	screenWidth,
+	deviceHeight,
+	deviceWidth,
+	statusBarHeight,
+	navigationBarHeight,
+	os,
+	statusBar
 };
 
 export type {

@@ -1,6 +1,5 @@
 import { BasicLayout } from '@layouts';
-import { View, Text, Button, Touchable, BottomNavigator } from '@components';
-import { Indicator } from './Indicator/Indicator';
+import { View, Text, Button, Touchable, BottomNavigator, Indicator } from '@components';
 import { Progress } from './Progress/Progress';
 import { Card } from './Card/Card';
 import { PlusCard } from './PlusCard/PlusCard';

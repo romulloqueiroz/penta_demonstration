@@ -1,69 +1,97 @@
 import { useState } from 'react';
-import Icon from '@src/components/Icon/Icon';
-import Text from '@src/components/Text/Text';
+import Animated, { useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated';
+import { deviceWidth, colors, IconType } from '@styles';
 import View from '@src/components/View/View';
-import Touchable from '@src/components/Touchable/Touchable';
-import { IconType } from '@styles';
+import { NavigatorIcon } from './NavigatorIcon/NavigatorIcon';
+
+const iconsArr = [
+  {
+    title: 'Home',
+    icon: 'home'
+  },
+  {
+    title: 'Music',
+    icon: 'search'
+  },
+  {
+    title: 'Market',
+    icon: 'shoppingCart'
+  },
+  {
+    title: 'My page',
+    icon: 'accountCircle'
+  },
+]
 
 type Active = 0 | 1 | 2 | 3;
 
-interface NavigatorIconProps { 
-  title: string; 
-  icon: IconType; 
-  onPress: () => void;
-  active: boolean;
-}
-
-const NavigatorIcon: React.FC<NavigatorIconProps> = ({ title, icon, onPress, active }) => (
-  <Touchable cross='center' onPress={onPress}>
-    <Icon name={icon} color={active ? 'text1' : 'background3'} />
-    <Text color={active ? 'text1' : 'background3'} weight='700'>
-      {title}
-    </Text>
-  </Touchable>
-);
-
 const BottomNavigator = () => {
+	const current = useSharedValue(0);
   const [active, setActive] = useState<Active>(0);
+	const screenWidth = deviceWidth - 48;
+  const transform = (val: number) => {
+    switch(val) {
+      case 0: 
+        return 44;
+      case 1: 
+        return 124;
+      case 2: 
+        return 210;
+      case 3: 
+        return 308;
+      default:
+        return 44;
+    }
+  }
+
+  const value = transform(current.value);
+
+  const animatedBackgroundTag = useAnimatedStyle(() => ({
+		transform: [{ translateX: withTiming(value) }]
+	}));
+
   return (
-    <View
-      style={{
-        position: 'absolute',
-        bottom: 0
-      }}
-      w='100%'
-      bgc='background4'
-      btlr='xs'
-      btrr='xs'
-    >
-      <View flex1 row main='space-between' pv='xs' ph='m'>
-        <NavigatorIcon 
-          title='Home' 
-          icon='home' 
-          active={active === 0}
-          onPress={() => setActive(0)} 
+    <>
+      <View
+        style={{
+          position: 'absolute',
+          bottom: 0
+        }}
+        w='100%'
+        bgc='background4'
+        btlr='xs'
+        btrr='xs'
+      >
+        <Animated.View 
+          style={[{
+            position: 'absolute',
+            backgroundColor: colors.text2,
+            width:24,
+            height: 4,
+            borderRadius: 16,
+            top: 0,
+          }, 
+          animatedBackgroundTag]} 
         />
-        <NavigatorIcon 
-          title='Music' 
-          icon='search' 
-          active={active === 1}
-          onPress={() => setActive(1)} 
-        />
-        <NavigatorIcon 
-          title='Market' 
-          icon='shoppingCart' 
-          active={active === 2}
-          onPress={() => setActive(2)} 
-        />
-        <NavigatorIcon 
-          title='My page' 
-          icon='accountCircle' 
-          active={active === 3}
-          onPress={() => setActive(3)} 
-        />
+        <View flex1 row main='space-between' pv='xs' ph='m'>
+
+          {iconsArr.map((item, index) => (
+            <NavigatorIcon 
+              key={index}
+              title={item.title} 
+              icon={item.icon as IconType} 
+              active={active === index}
+              onPress={() => {
+                setActive(index as Active);
+                current.value = index;
+              }}
+            /> 
+          ))}
+
+        </View>
+        <View h={34} />
       </View>
-      <View h={34} />
-    </View>
+    </>
   );
 }
 

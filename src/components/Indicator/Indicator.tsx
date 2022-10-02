@@ -1,8 +1,8 @@
-import { View } from '@components';
+import View from '@src/components/View/View';
 import { Symbol1, Symbol2, Symbol3 } from '@images';
 import { Item } from './Item/Item';
 
-export const Indicator = () => (
+const Indicator = () => (
   <View
     h={32}
     w={178}
@@ -17,3 +17,5 @@ export const Indicator = () => (
     <Item image={Symbol3} />
   </View>
 );
+
+export default Indicator;
