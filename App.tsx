@@ -1,7 +1,7 @@
-import { Home } from '@screens';
+import Routes from '@routes';
 
 const App = () => (
-  <Home />
+  <Routes />
 );
 
 

@@ -1,7 +1,11 @@
-import FirstView from './FirstView/FirstView';
-import Home from './Home/Home';
+import FirstViewScreen from './FirstView/FirstView';
+import HomeScreen from './Home/Home';
+import MarketScreen from './Market/Market';
 
-export {
-  FirstView,
-  Home
-}
+const screensObj = {
+  FirstViewScreen,
+  HomeScreen,
+  MarketScreen
+};
+
+export default screensObj;

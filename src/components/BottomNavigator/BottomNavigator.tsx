@@ -1,4 +1,5 @@
 import { useState } from 'react';
+// import { useRoute } from '@react-navigation/native';
 import Animated, { useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated';
 import { deviceWidth, colors, IconType } from '@styles';
 import View from '@src/components/View/View';
@@ -26,6 +27,7 @@ const iconsArr = [
 type Active = 0 | 1 | 2 | 3;
 
 const BottomNavigator = () => {
+	// const { name: routeName } = useRoute();
 	const current = useSharedValue(0);
   const [active, setActive] = useState<Active>(0);
 	const screenWidth = deviceWidth - 48;

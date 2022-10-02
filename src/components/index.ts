@@ -7,6 +7,7 @@ import BottomNavigator from './BottomNavigator/BottomNavigator';
 import Gradient from './Gradient/Gradient';
 import Earphone from './Earphone/Earphone';
 import Indicator from './Indicator/Indicator';
+import Scroll from './Scroll/Scroll';
 
 export {
   View,
@@ -17,5 +18,6 @@ export {
   BottomNavigator,
   Gradient,
   Earphone,
-  Indicator
+  Indicator,
+  Scroll
 };
